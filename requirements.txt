@@ -1,0 +1,10 @@
+Flask
+flask-cors
+python-dotenv
+langchain
+langchain-community
+langchain-together
+langchain-huggingface
+tiktoken
+chromadb
+pypdf

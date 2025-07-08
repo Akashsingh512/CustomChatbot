@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amara Grove Bay Chatbot</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input[type="text"] { width: 400px; padding: 8px; }
+        input[type="submit"] { padding: 8px 16px; }
+        .response { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Ask About Amara Grove Bay</h1>
+    <form method="post">
+        <input type="text" name="query" placeholder="Ask your question..." required>
+        <input type="submit" value="Ask">
+    </form>
+    {% if answer %}
+        <div class="response">
+            <p><strong>Answer:</strong> {{ answer }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
