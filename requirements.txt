@@ -9,3 +9,4 @@ tiktoken
 chromadb
 pypdf
 gunicorn
+sentence-transformers
