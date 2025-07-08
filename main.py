@@ -1,3 +1,5 @@
+# main.py
+
 from dotenv import load_dotenv
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
@@ -25,3 +27,16 @@ def get_qa_chain():
 
     qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=db.as_retriever(), return_source_documents=True)
     return qa_chain
+
+# Only run CLI when directly called
+if __name__ == "__main__":
+    qa = get_qa_chain()
+    while True:
+        query = input("Ask about Amara Grove Bay: ")
+        if query.lower() in ["exit", "quit"]:
+            break
+        try:
+            response = qa.invoke({"query": query})
+            print("\nAnswer:", response["result"])
+        except Exception as e:
+            print("❌ Error:", e)
